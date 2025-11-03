@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALEJANDRO MENDIETA - TÉCNICO EN SISTEMAS | FULL STACK DEVELOPER</title>
+    <meta name="description" content="Alejandro Mendieta - Técnico en Sistemas, Desarrollador Full Stack especializado en Python, cybersecurity y desarrollo web. Contáctame para oportunidades profesionales.">
+    <meta name="keywords" content="técnico sistemas, desarrollador full stack, python, cybersecurity, Colombia, programador">
+    <meta property="og:title" content="Alejandro Mendieta - Técnico en Sistemas | Full Stack Developer">
+    <meta property="og:description" content="CV profesional especializado en desarrollo Python, cybersecurity y soluciones tecnológicas integrales">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #dc2626;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --text: #334155;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --header-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            text-transform: uppercase;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        /* Header Styles */
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: var(--header-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            position: relative;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 6px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .profile-img i {
+            font-size: 4.5rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            position: sticky;
+            top: 30px;
+            height: fit-content;
+        }
+        
+        .main-content {
+            background-color: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        h2 i {
+            margin-right: 12px;
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .contact-info div {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+        
+        .contact-info div:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-info i {
+            width: 35px;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .skill-item {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-item strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .language {
+            background-color: var(--light);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 140px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--light);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-item::before, .education-item::before, .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .year {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 4px 6px 4px 0;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: var(--dark);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--light);
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        
+        /* Niveles de habilidad */
+        .skill-level {
+            margin-bottom: 10px;
+        }
+        
+        .skill-level strong {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        /* Sección de descarga */
+        .download-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--success);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .download-btn:hover {
+            background: #0da271;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Mejorar contraste para lectura */
+        .experience-item p, .education-item p, .project-item p {
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        /* EXCEPCIONES - Elementos que NO deben estar en mayúsculas */
+        .tag, .year, .progress, .profile-img i, .links a i, .contact-info i, h2 i, .download-btn i {
+            text-transform: none !important;
+        }
+        
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .sidebar, .main-content {
+                padding: 25px;
+            }
+            
+            .languages {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .experience-item, .education-item, .skill-item, .project-item {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                <img src="foto.jpeg" alt="ALEJANDRO MENDIETA">
+            </div>
+            <h1>ALEJANDRO MENDIETA</h1>
+            <div class="subtitle">TÉCNICO EN SISTEMAS | DESARROLLADOR FULL STACK | CON INTERÉS EN CIBERSEGURIDAD</div>
+            
+            <div class="download-section">
+                <a href="cv-alejandro-mendieta.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i> DESCARGAR
+                </a>
+            </div>
+        </header>
+        
+        <aside class="sidebar">
+            <section class="section">
+                <h2><i class="fas fa-id-card"></i> CONTACTO</h2>
+                <div class="contact-info">
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <span>(322) 336 4383</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <span>JUSTINALEJANDROMENDIETA@GMAIL.COM</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>COLOMBIA</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-users"></i>
+                        <span>REFERENCIAS: A SOLICITUD</span>
+                    </div>
+                </div>
+                
+                <div class="links">
+                    <a href="https://github.com/Alejandro-Mendieta" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alejandromendieta" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-cogs"></i> HABILIDADES TÉCNICAS</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>DESARROLLO Y PROGRAMACIÓN</strong>
+                        <div class="skill-level">
+                            <strong>AVANZADO:</strong>
+                            <span class="tag">PYTHON</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                        </div>
+                        <div class="skill-level">
+                            <strong>INTERMEDIO:</strong>
+                            <span class="tag">JAVASCRIPT</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">JAVA</span>
+                        </div>
+                        <div class="skill-level">
+                            <strong>BÁSICO:</strong>
+                            <span class="tag">R</span>
+                            <span class="tag">PANDAS</span>
+                            <span class="tag">PYGAME</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <strong>REDES Y SISTEMAS</strong>
+                        <div class="skill-tags">
+                            <span class="tag">WIRESHARK</span>
+                            <span class="tag">NMAP</span>
+                            <span class="tag">WINDOWS</span>
+                            <span class="tag">LINUX</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <strong>CIBERSEGURIDAD</strong>
+                        <div class="skill-tags">
+                            <span class="tag">VERACRYPT</span>
+                            <span class="tag">WIFISLAX</span>
+                            <span class="tag">COBIAN BACKUP</span>
+                            <span class="tag">PFSENSE</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <strong>SOPORTE TÉCNICO</strong>
+                        <div class="skill-tags">
+                            <span class="tag">HARDWARE</span>
+                            <span class="tag">MANTENIMIENTO</span>
+                            <span class="tag">OPTIMIZACIÓN</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <strong>DISEÑO MULTIMEDIA</strong>
+                        <div class="skill-tags">
+                            <span class="tag">CORELDRAW</span>
+                            <span class="tag">CAPCUT</span>
+                            <span class="tag">SOLIDEDGE</span>
+                            <span class="tag">AUDACITY</span>
+                            <span class="tag">PHOTOSHOP</span>
+                            <span class="tag">MICROBIT</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-language"></i> IDIOMAS</h2>
+                <div class="languages">
+                    <div class="language">
+                        <strong>ESPAÑOL:</strong> NATIVO
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="language">
+                        <strong>INGLÉS:</strong> INTERMEDIO B1
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-user-check"></i> HABILIDADES PERSONALES</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">LIDERAZGO</div>
+                    <div class="skill-item">COMUNICACIÓN</div>
+                    <div class="skill-item">TOMA DE DECISIONES</div>
+                    <div class="skill-item">GESTIÓN DEL TIEMPO</div>
+                    <div class="skill-item">TRABAJO EN EQUIPO</div>
+                    <div class="skill-item">PENSAMIENTO ESTRATÉGICO</div>
+                    <div class="skill-item">PERSEVERANTE</div>
+                    <div class="skill-item">EFICAZ</div>
+                </div>
+            </section>
+        </aside>
+        
+        <main class="main-content">
+            <section class="section">
+                <h2><i class="fas fa-user"></i> PERFIL PROFESIONAL</h2>
+                <p class="about-text">
+                    TÉCNICO EN SISTEMAS CON GRAN HABILIDAD EN PYTHON, ORIENTADO AL DESARROLLO DE SOLUCIONES TECNOLÓGICAS QUE 
+                    INTEGRAN HARDWARE, SOFTWARE Y SEGURIDAD INFORMÁTICA. ME DESTACO POR APLICAR LA LÓGICA, LA CREATIVIDAD Y 
+                    LA EFICIENCIA EN PROYECTOS QUE RESUELVEN PROBLEMAS REALES MEDIANTE PROGRAMACIÓN, REDES Y AUTOMATIZACIÓN.
+                </p>
+                <p class="about-text">
+                    MI PERFIL PERSONAL SE CARACTERIZA POR SER ANALÍTICO, RESOLUTIVO Y AUTODIDACTA, CON PASIÓN POR LA TECNOLOGÍA, 
+                    LA PROGRAMACIÓN EN PYTHON Y LA CIBERSEGURIDAD. MI PROPÓSITO ES CONSOLIDARME COMO UN PROFESIONAL INTEGRAL 
+                    EN TECNOLOGÍA, IMPULSANDO SOLUCIONES SEGURAS, INNOVADORAS Y EFICIENTES.
+                </p>
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-briefcase"></i> EXPERIENCIA</h2>
+                <div class="experience-item">
+                    <div class="year">2024-2025</div>
+                    <h3>TÉCNICO EN SISTEMAS – PROYECTOS ACADÉMICOS</h3>
+                    <p>
+                        DESARROLLÉ +5 PROYECTOS TECNOLÓGICOS CON ARDUINO Y PYTHON, OPTIMICÉ +20 EQUIPOS DE CÓMPUTO, 
+                        PROGRAMACIÓN WEB (HTML, JAVASCRIPT, SQL), EDICIÓN DIGITAL (CORELDRAW, CAPCUT) Y APLICACIÓN DE MEDIDAS 
+                        BÁSICAS DE CIBERSEGURIDAD Y PROTECCIÓN DE DATOS.
+                    </p>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="year">2025</div>
+                    <h3>TÉCNICO Y REDES – SERVICIO INDEPENDIENTE</h3>
+                    <p>
+                        BRINDÉ ASISTENCIA TÉCNICA EN MANTENIMIENTO PREVENTIVO Y CORRECTIVO DE +15 EQUIPOS, INSTALACIÓN DE SOFTWARE 
+                        Y SISTEMAS OPERATIVOS, CONFIGURACIÓN DE 3 REDES LOCALES Y RESPALDO SEGURO DE INFORMACIÓN. ASESORÉ A USUARIOS 
+                        EN SEGURIDAD INFORMÁTICA Y OPTIMIZACIÓN DEL RENDIMIENTO DE SUS DISPOSITIVOS.
+                    </p>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-project-diagram"></i> PROYECTOS DESTACADOS</h2>
+                <div class="project-item">
+                    <h3>SISTEMA DE AUTOMATIZACIÓN CON ARDUINO Y PYTHON</h3>
+                    <p>
+                        DESARROLLO DE SOLUCIÓN PARA AUTOMATIZACIÓN DE PROCESOS INTEGRANDO SENSORES, ACTUADORES Y 
+                        COMUNICACIÓN INALÁMBRICA. IMPLEMENTACIÓN DE PROTOTIPOS PARA MONITOREO EN TIEMPO REAL.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">PYTHON</span>
+                        <span class="tag">ARDUINO</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">HTML/CSS</span>
+                    </div>
+                </div>
+    
+            </section>
+            
+            <section class="section">
+                <h2><i class="fas fa-graduation-cap"></i> EDUCACIÓN</h2>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>TÉCNICO EN SISTEMAS Y COMPUTACIÓN</h3>
+                    <p>COLEGIO TÉCNICO MUNICIPAL FRANCISCO DE PAULA SANTANDER</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>INTRODUCCIÓN A LA ESTADÍSTICA EN PYTHON</h3>
+                    <p>DATACAMP</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>LINUX LUMINARIUM</h3>
+                    <p>PWN.COLLEGE</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>INTRODUCCIÓN A LA INTELIGENCIA ARTIFICIAL Y LOS AGENTES GENERATIVOS</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>INTRODUCCIÓN AL APRENDIZAJE AUTOMÁTICO EN AZURE</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>DESARROLLO DE HABILIDADES DIGITALES PARA LA CONSTRUCCIÓN DE CONTENIDO DIGITAL</h3>
+                    <p>SERVICIO NACIONAL DE APRENDIZAJE - SENA</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>INMERSIÓN A LA FOTOGRAFÍA DIGITAL</h3>
+                    <p>SERVICIO NACIONAL DE APRENDIZAJE - SENA</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>INTRODUCCIÓN A LOS CONSEJOS DE APRENDIZAJE AUTOMÁTICO</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>DESCRIPCIÓN DE LAS VENTAJAS DE USAR SERVICIOS EN LA NUBE</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>EXPLORAR CONCEPTOS BÁSICOS DE DATOS</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>EXPLORACIÓN DE AZURE STORAGE PARA DATOS NO RELACIONALES</h3>
+                    <p>LEARN MICROSOFT</p>
+                </div>
+                
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>PLAYING WITH PROGRAMS</h3>
+                    <p>PWN.COLLEGE</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="year">2025</div>
+                    <h3>COMPUTING 101</h3>
+                    <p>PWN.COLLEGE</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>ALEJANDRO MENDIETA - 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
