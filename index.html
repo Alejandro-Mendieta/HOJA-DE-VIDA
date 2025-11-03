@@ -383,6 +383,9 @@
             font-weight: 600;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .download-btn:hover {
@@ -395,6 +398,63 @@
         .experience-item p, .education-item p, .project-item p {
             color: var(--dark);
             line-height: 1.7;
+        }
+        
+        /* Estilos para impresión */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                text-transform: uppercase;
+                font-size: 12pt;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                box-shadow: none;
+                gap: 15px;
+                padding: 10px;
+            }
+            
+            .sidebar, .main-content {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                padding: 20px;
+            }
+            
+            .links, .download-section {
+                display: none !important;
+            }
+            
+            header {
+                box-shadow: none;
+                background: #f0f0f0 !important;
+                color: black !important;
+                padding: 30px 0;
+            }
+            
+            .skill-item, .experience-item, .education-item, .project-item {
+                box-shadow: none;
+                border: 1px solid #eee;
+                break-inside: avoid;
+            }
+            
+            .profile-img {
+                border: 3px solid #ccc;
+            }
+            
+            h1 {
+                font-size: 24pt;
+            }
+            
+            h2 {
+                font-size: 14pt;
+            }
+            
+            h3 {
+                font-size: 12pt;
+            }
         }
         
         /* EXCEPCIONES - Elementos que NO deben estar en mayúsculas */
@@ -484,9 +544,9 @@
             <div class="subtitle">TÉCNICO EN SISTEMAS | DESARROLLADOR FULL STACK | CON INTERÉS EN CIBERSEGURIDAD</div>
             
             <div class="download-section">
-                <a href="cv-alejandro-mendieta.pdf" download class="download-btn">
-                    <i class="fas fa-download"></i> DESCARGAR
-                </a>
+                <button onclick="window.print()" class="download-btn">
+                    <i class="fas fa-download"></i> DESCARGAR CV PDF
+                </button>
             </div>
         </header>
         
@@ -672,7 +732,20 @@
                         <span class="tag">HTML/CSS</span>
                     </div>
                 </div>
-    
+                
+                <div class="project-item">
+                    <h3>PLATAFORMA WEB PARA GESTIÓN DE CONTENIDO DIGITAL</h3>
+                    <p>
+                        CREACIÓN DE APLICACIÓN WEB FULL STACK PARA ADMINISTRACIÓN Y DISTRIBUCIÓN DE CONTENIDO MULTIMEDIA 
+                        CON ENFOQUE EN USABILIDAD Y RENDIMIENTO.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="tag">JAVASCRIPT</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                </div>
             </section>
             
             <section class="section">
@@ -762,5 +835,23 @@
             <p>ALEJANDRO MENDIETA - 2025</p>
         </footer>
     </div>
+
+    <script>
+        // Función para mejorar la experiencia de descarga
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.querySelector('.download-btn');
+            
+            downloadBtn.addEventListener('click', function() {
+                // Mensaje útil para el usuario
+                console.log('💡 Consejo: En la ventana de impresión, selecciona "Guardar como PDF"');
+                console.log('📁 Se recomienda guardar como: CV_Alejandro_Mendieta.pdf');
+                
+                // Opcional: Mostrar alerta (puedes comentar esta línea si no la quieres)
+                setTimeout(() => {
+                    alert('💡 En la ventana de impresión, selecciona "Guardar como PDF" y guarda el archivo como "CV_Alejandro_Mendieta.pdf"');
+                }, 100);
+            });
+        });
+    </script>
 </body>
 </html>
